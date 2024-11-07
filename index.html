@@ -8,7 +8,21 @@
 </head>
 <style>
     .wrapper1 {
-        display: block;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        
+    }
+    .wrapper2 {
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+
+        
     }
     @property --angle{
         syntax: "<angle>";
@@ -16,16 +30,22 @@
             inherits: false;
     }
     .wrap {
-        width: 400px;
-        height: 500px;
+        width: 29.45508100147275%;
+        
+        height: 550px;
         border-radius: 20px;
-        transform: translate(110%, 12%);
+        margin-top: 50px;
         background-color: rgb(91, 241, 91);
         box-shadow: 0px 0px 80px green inset;
         background-image: conic-gradient(from var(--angle), rgb(130, 233, 156), rgb(38, 188, 68), rgb(130, 233, 156));
         animation: 1s spin linear infinite;
         /* display: flex;
         flex-wrap: wrap; */
+        max-width: 29.45508100147275%;
+        min-width: 20rem;
+    }
+    input{
+        max-width: 87%;
     }
     @keyframes spin {
         from{
@@ -86,15 +106,15 @@
         transform: translate(6%, 300%);
         border-radius: 5px;
         border: none;
-        font-size: larger;
+        font-size: large;
         color: white;
+        max-width: 87.5%;
     }
 
     .txt2 {
         font-size: 17px;
-        position: absolute;
-        top: 92%;
-        left: 9%;
+        margin-top: 140px;
+        margin-left: 30px;
 
     }
 
@@ -102,11 +122,13 @@
         background-color: rgb(3, 233, 3);
         height: 40px;
         width: 80px;
-        transform: translate(330%, 330%);
+        /* margin-left: 220px; */
+       
         border-radius: 5px;
         border: none;
-        font-size: larger;
+        font-size: large;
         color: white;
+        max-width: 20%;
     }
 
     button:hover {
@@ -115,19 +137,23 @@
     }
 
     .wrapper2 {
-        display: none;
+        /* display: none; */
     }
 
     .wrap2 {
-        width: 400px;
-        height: 400px;
+        width: 29.45508100147275%;
+        height: 450px;
         border-radius: 20px;
-        transform: translate(110%, 12%);
+        margin-top: 50px;
         background-color: rgb(91, 241, 91);
         box-shadow: 0px 0px 80px green inset;
         box-shadow: 0px 0px 80px green inset;
         background-image: conic-gradient(from var(--angle), rgb(130, 233, 156), rgb(38, 188, 68), rgb(130, 233, 156));
         animation: 1s spin linear infinite;
+        max-width: 29.45508100147275%;
+        min-width: 20rem;
+        display: none;
+       
     }
 
     .txt3 {
@@ -146,15 +172,16 @@
         transform: translate(6%, 300%);
         border-radius: 5px;
         border: none;
-        font-size: larger;
+        font-size: large;
         color: white;
+        max-width: 87.5%;
     }
 
     .txt4 {
         font-size: 17px;
-        position: absolute;
-        top: 89%;
-        left: 9%;
+        margin-top: 140px;
+        margin-left: 30px;
+        
 
     }
 
@@ -162,11 +189,13 @@
         background-color: rgb(3, 233, 3);
         height: 40px;
         width: 80px;
-        transform: translate(330%, 345%);
+        /* margin-left: 220px; */
+       
         border-radius: 5px;
         border: none;
-        font-size: larger;
+        font-size: 15px;
         color: white;
+        max-width: 20%;
     }
 
     #enterPage {
@@ -187,8 +216,8 @@
 </style>
 
 <body>
-    <section id="wrapper1" class="wrapper1">
-        <div class="wrap">
+    <div id="wrapper1" class="wrapper1">
+        <div class="wrap" id="wrap">
             <p class="txt1">Sign Up</p>
             <input style="height: 30px;" placeholder="First name" type="text" id="inp1">
             <input style="height: 30px;" placeholder="Last name" type="text" id="inp2">
@@ -196,21 +225,19 @@
             <input style="height: 30px;" placeholder="Enter Password" type="password" id="pass1">
             <input style="height: 30px;" placeholder="Confirm Password" type="password" id="pass2">
             <button onclick="register()" class="signupBtn">Sign Up</button>
-            <span class="txt2">Already have an account </span><button onclick="showLogin()" class="loginBtn">Log
-                in</button>
+            <p class="txt2">Already have an account <button onclick="showLogin()" class="loginBtn">Login</button><p> 
         </div>
-    </section>
-    <section id="wrapper2" class="wrapper2">
+    </div>
+    <div id="wrapper2" class="wrapper2">
         
-        <div class="wrap2">
+        <div class="wrap2" id="wrap2">
             <p class="txt3">Log In</p>
             <input style="height: 30px;" placeholder="Email Address" type="email" id="email2">
             <input style="height: 30px;" placeholder="Enter Password" type="password" id="pass3">
             <button onclick="signin()" class="login">Log in</button>
-            <span class="txt4">Do not have an account</span><button onclick="showRegister()" class="signup">Sign
-                up</button>
+            <p class="txt4">Do not have an account <button onclick="showRegister()" class="signup">Signup</button></p>
         </div>
-    </section>
+    </div>
     <div id="enterPage"></div>
 </body>
 <script>
@@ -223,8 +250,8 @@
     let inp2 = document.getElementById('inp2')
     let obj;
     let arr = [];
-    let wrapper1 = document.getElementById('wrapper1')
-    let wrapper2 = document.getElementById('wrapper2')
+    let wrapper1 = document.getElementById('wrap')
+    let wrapper2 = document.getElementById('wrap2')
     let enterPage = document.getElementById('enterPage')
 
     function register() {
@@ -310,6 +337,7 @@
     }
 
     document.body.style.backgroundColor = 'lightgreen'
+    
 </script>
 
 </html>
